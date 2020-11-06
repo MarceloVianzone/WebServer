@@ -3,11 +3,11 @@
     - (utente root)     ```apt install openssh-server```
     - (Utente non root) ```sudo apt-get install openssh-server```
 2. Installare Apache2
-    - (utente root)     apt-get install apache2
-    - (utente non root) sudo apt.get install apache2
+    - (utente root)     ```apt-get install apache2```
+    - (utente non root) ```sudo apt.get install apache2```
 3. Impostare ip statico
-    - (utente root)     nano /etc/netplan/ *nome file*
-    - (utente non root) sudo nano /etc/netplan/ *nome file*<br/>
+    - (utente root)     ```nano /etc/netplan/ *nome file*```
+    - (utente non root) ```sudo nano /etc/netplan/ ```*nome file*<br/>
         Ci sono svariati nomi di questi file nel mio caso è *01-netcfg.__yaml__*.
         Comunque vengono tutti distinti dall'estensione **yaml**.
         Una volta entrati dentro l'editor modifichiamo questo file in questo modo:
@@ -24,10 +24,10 @@
                   addresses: [inserisci_i_tuoi_dns(es 8.8.8.8) , (es 1.1.1.1)]
         ```
 4. Rendiamo effettiva la modifica 
-    - (utente root)     netplan apply
-    - (utente non root) sudo netplan apply
+    - (utente root)     ```netplan apply```
+    - (utente non root) ```sudo netplan apply```
 5. Dividiamo i vari siti
-    - cd /etc/apache2/sites-avaiable
+    - ```cd /etc/apache2/sites-avaiable```
     - copia il file *000-default.conf* e dagli un altro nome, nel mio caso *100-default.conf*
     - ora modifichiamo il secondo file (*100-default.conf*). Aggiungiamo una stringa sopra ServerAdmin
     - ServerName il_tuo_dns_primario<br/>
@@ -80,5 +80,5 @@
     - ricordati di cambiare il dns
     - ricordati di cambiare la directory
 7. Abilitiamo i siti
-    - 
+    - ```a2ensites``` *nome del file* (nel mio caso *100-default.yaml*)
     
