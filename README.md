@@ -29,7 +29,7 @@
 5. Dividiamo i vari siti
     - cd /etc/apache2/sites-avaiable
     - copia il file *000-default.conf* e dagli un altro nome, nel mio caso *100-default.conf*
-    -ora modifichiamo il secondo file (*100-default.conf*)<br/>
+    - ora modifichiamo il secondo file (*100-default.conf*)<br/>
     ```yaml
     <VirtualHost *:80>
             # The ServerName directive sets the request scheme, hostname and port that
