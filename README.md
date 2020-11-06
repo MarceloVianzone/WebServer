@@ -31,7 +31,6 @@
     - copia il file *000-default.conf* e dagli un altro nome, nel mio caso *100-default.conf*
     -ora modifichiamo il secondo file (*100-default.conf*)<br/>
     ```yaml
-    GNU nano 4.8                     100-default.conf
     <VirtualHost *:80>
             # The ServerName directive sets the request scheme, hostname and port that
             # the server uses to identify itself. This is used when creating
@@ -61,8 +60,6 @@
             # after it has been globally disabled with "a2disconf".
             #Include conf-available/serve-cgi-bin.conf
     </VirtualHost>
-    
-    # vim: syntax=apache ts=4 sw=4 sts=4 sr noet
     ```
    
     
