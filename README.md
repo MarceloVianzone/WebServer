@@ -79,5 +79,6 @@
 6. Esegui il passo 5 con quanti dns vuoi
     - ricordati di cambiare il dns
     - ricordati di cambiare la directory
-7. 
+7. Abilitiamo i siti
+    - 
     
