@@ -7,7 +7,7 @@
     - (utente non root) sudo apt.get install apache2
 3. Impostare ip statico
     - (utente root)     nano /etc/netplan/ *nome file*
-    - (utente non root) sudo nano /etc/netplan/ *nome file*\n
+    - (utente non root) sudo nano /etc/netplan/ *nome file*(space, space)
         Ci sono svariati nomi di questi file nel mio caso è *01-netcfg.__yaml__*.
         Comunque vengono tutti distinti dall'estensione **yaml**.
         Una volta entrati dentro l'editor modifichiamo questo file in questo modo:
