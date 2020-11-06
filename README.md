@@ -27,4 +27,4 @@ network:
 4. Rendiamo effettiva la modifica
         - (utente root)     netplan apply
         - (utente non root) sudo netplan apply
-5. 
+5.
