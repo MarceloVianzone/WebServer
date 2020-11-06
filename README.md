@@ -19,8 +19,12 @@ network:
   ethernets:
     eth0:
       dhcp4: false
-      addresses: [192.168.1.12/24]
-      gateway4: 192.168.1.1
+      addresses: [inserisci_qui_il_tuo_ip / metti la netmask espressa in numero (es 24)]
+      gateway4: inserisci_qui_il_tuo_gateway_predefinito
       nameservers:
-          addresses: [8.8.8.8, 1.1.1.1]
+          addresses: [inserisci_i_tuoi_dns(es 8.8.8.8) , (es 1.1.1.1)]
 ```
+4. Rendiamo effettiva la modifica
+        - (utente root)     netplan apply
+        - (utente non root) sudo netplan apply
+5. 
