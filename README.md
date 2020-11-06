@@ -24,6 +24,6 @@
                   addresses: [inserisci_i_tuoi_dns(es 8.8.8.8) , (es 1.1.1.1)]
         ```
 4. Rendiamo effettiva la modifica 
-        - (utente root)     netplan apply
-        - (utente non root) sudo netplan apply
+    - (utente root)     netplan apply
+    - (utente non root) sudo netplan apply
 5.
