@@ -36,7 +36,7 @@
         ServerAdmin webmaster@localhost
         DocumentRoot /var/www/html
     ```
-    - ed ora cambiamo la directory di questo sito
+    - ed ora cambiamo la directory di questo sito (*DocumentRoot*)
     - io ho deciso di dargli una directory con il nome del dns
     ```yaml
         ServerName marsy01.ddns.net
@@ -76,5 +76,8 @@
             #Include conf-available/serve-cgi-bin.conf
     </VirtualHost>
     ```
-   
+6. Esegui il passo 5 con quanti dns vuoi
+    - ricordati di cambiare il dns
+    - ricordati di cambiare la directory
+7. 
     
