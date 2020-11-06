@@ -13,4 +13,14 @@ Ci sono svariati nomi di questi file nel mio caso è *01-netcfg.__yaml__*.
 Comunque vengono tutti distinti dall'estensione **yaml**.
 Una volta entrati dentro l'editor modifichiamo questo file in questo modo:
 ```
-  
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    eth0:
+      dhcp4: false
+      addresses: [192.168.1.12/24]
+      gateway4: 192.168.1.1
+      nameservers:
+          addresses: [8.8.8.8, 1.1.1.1]
+```
