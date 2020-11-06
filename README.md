@@ -1,7 +1,7 @@
 # Ubuntu Server Apache2
 1. Installare openssh
-  - (utente root)     apt install openssh-server
-  - (Utente non root) sudo apt-get install openssh-server
+    - (utente root)     apt install openssh-server
+    - (Utente non root) sudo apt-get install openssh-server
 2. Installare Apache2
   - (utente root)     apt-get install apache2
   - (utente non root) sudo apt.get install apache2
