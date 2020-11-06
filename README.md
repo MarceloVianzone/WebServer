@@ -29,7 +29,21 @@
 5. Dividiamo i vari siti
     - cd /etc/apache2/sites-avaiable
     - copia il file *000-default.conf* e dagli un altro nome, nel mio caso *100-default.conf*
-    - ora modifichiamo il secondo file (*100-default.conf*)<br/>
+    - ora modifichiamo il secondo file (*100-default.conf*). Aggiungiamo una stringa sopra ServerAdmin
+    - ServerName il_tuo_dns_primario<br/>
+    ```yaml
+        ServerName marsy01.ddns.net
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/html
+    ```
+    - ed ora cambiamo la directory di questo sito
+    - io ho deciso di dargli una directory con il nome del dns
+    ```yaml
+        ServerName marsy01.ddns.net
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/marsy01
+    ```
+    - il risultato è il seguente
     ```yaml
     <VirtualHost *:80>
             # The ServerName directive sets the request scheme, hostname and port that
@@ -41,6 +55,7 @@
             # However, you must set it for any further virtual host explicitly.
             #ServerName www.example.com
             
+            ServerName marsy01.ddns.net
             ServerAdmin webmaster@localhost
             DocumentRoot /var/www/marsy01
             
