@@ -28,12 +28,13 @@
     - (utente non root) ```sudo netplan apply```
 5. Dividiamo i vari siti
     - ```cd /etc/apache2/sites-avaiable```
-    - copia il file *000-default.conf* e dagli un altro nome, nel mio caso *100-default.conf*
-    - ora modifichiamo il secondo file (*100-default.conf*). Aggiungiamo una stringa sopra ServerAdmin
+    - copia il file *000-default.conf* e dagli un altro nome, nel mio caso *marsy01.ddns.net.conf*
+    - ora modifichiamo il secondo file (*marsy01.ddns.net.conf*). Aggiungiamo la stringa *ServerName* sopra ServerAdmin e poi ServerAlias
     - ServerName il_tuo_dns_primario<br/>
     ```yaml
         ServerName marsy01.ddns.net
-        ServerAdmin webmaster@localhost
+        ServerAlias www.marsy01.ddns.net
+        ServerAdmin webmaster@marsy01.ddns.net
         DocumentRoot /var/www/html
     ```
     - ed ora cambiamo la directory di questo sito (*DocumentRoot*)
@@ -41,7 +42,12 @@
     ```yaml
         ServerName marsy01.ddns.net
         ServerAdmin webmaster@localhost
-        DocumentRoot /var/www/marsy01
+        DocumentRoot /var/www/marsy01.ddns.net/public_html
+        
+        <Directory /var/www/marsy01.ddns.net/public_html>
+                Options -Indexes +FollowSymLinks
+                AllowOverride All
+        </Directory>
     ```
     - il risultato è il seguente
     ```yaml
@@ -55,9 +61,15 @@
             # However, you must set it for any further virtual host explicitly.
             #ServerName www.example.com
             
-            ServerName marsy01.ddns.net
-            ServerAdmin webmaster@localhost
-            DocumentRoot /var/www/marsy01
+            ServerName casavianzone.ddns.net
+            ServerAlias www.casavianzone.ddns.net
+            ServerAdmin webmaster@casavianzone.ddns.net
+            DocumentRoot /var/www/casavianzone.ddns.net/public_html
+            <Directory /var/www/casavianzone.ddns.net/public_html>
+                Options -Indexes +FollowSymLinks
+                AllowOverride All
+            </Directory>
+
             
             # Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
             # error, crit, alert, emerg.
@@ -80,5 +92,8 @@
     - ricordati di cambiare il dns
     - ricordati di cambiare la directory
 7. Abilitiamo i siti
-    - ```a2ensites *nome del file*``` (nel mio caso *100-default.yaml*)
+    - ```a2ensites *nome del file*``` (nel mio caso *marsy01.ddns.net.conf*)
+8. Riavviamo il web server così da rendere effettive le modifiche
+    - (utente root)     ```systemctl restart apache2```
+    - (Utente non root) ```sudo systemctl restart apache2```
     
