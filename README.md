@@ -65,6 +65,7 @@
             ServerAlias www.casavianzone.ddns.net
             ServerAdmin webmaster@casavianzone.ddns.net
             DocumentRoot /var/www/casavianzone.ddns.net/public_html
+            
             <Directory /var/www/casavianzone.ddns.net/public_html>
                 Options -Indexes +FollowSymLinks
                 AllowOverride All
