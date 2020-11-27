@@ -28,8 +28,11 @@
     - (utente non root) ```sudo netplan apply```
 5. Creiamo i nuovi utenti (1 utente per ogni sito che vogliamo creare)
     - (utente root)     ```useradd -s /bin/bash -d /var/www/sito1 -m sito1```
-    -(utente non root)  ```sudo useradd -s /bin/bash -d /var/www/sito1 -m sito1```
-6. Dividiamo i vari siti
+    - (utente non root)  ```sudo useradd -s /bin/bash -d /var/www/sito1 -m sito1```
+6. Cambiamo la password agli utenti
+    - (utente root)     ```passwd sito1```
+    - (utente non root)  ```sudo passwd sito1```
+7. Dividiamo i vari siti
     - ```cd /etc/apache2/sites-avaiable```
     - copia il file *000-default.conf* e dagli un altro nome, nel mio caso *marsy01.ddns.net.conf*
     - ora modifichiamo il secondo file (*marsy01.ddns.net.conf*). Aggiungiamo la stringa *ServerName* sopra ServerAdmin e poi ServerAlias
@@ -92,11 +95,11 @@
             #Include conf-available/serve-cgi-bin.conf
     </VirtualHost>
     ```
-7. Esegui il passo 5 con quanti dns vuoi
+8. Esegui il passo 5 con quanti dns vuoi
     - ricordati di cambiare il dns
     - ricordati di cambiare la directory
-8. Abilitiamo i siti
+9. Abilitiamo i siti
     - ```a2ensites *nome del file*``` (nel mio caso *marsy01.ddns.net.conf*)
-9. Riavviamo il web server così da rendere effettive le modifiche
+10. Riavviamo il web server così da rendere effettive le modifiche
     - (utente root)     ```systemctl restart apache2```
     - (Utente non root) ```sudo systemctl restart apache2```
